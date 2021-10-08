@@ -2,6 +2,14 @@ import React, { createRef, useContext } from "react";
 import Pdf from "react-to-pdf";
 import AppContext from "../AppContext";
 import { makeStyles } from "@material-ui/core/styles";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+
 
 const useStyles = makeStyles((theme) => ({
   buttonBuildNew: {
