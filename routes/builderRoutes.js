@@ -37,7 +37,7 @@ router.get('api/resume', async (req, res) => {
                 }
             }
         ]);
-        res.status(200).json(previousWorkout);
+        res.status(200).json(updateResume);
     } catch (err) {
         res.status(500).json(err);
     }
