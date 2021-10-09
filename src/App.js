@@ -9,6 +9,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import {Container, Grid,} from 'semantic-ui-react'
+import LogIn from "./components/login";
+import Register from "./components/register";
+import Auth from "./utils/auth";
+
+
 
 function App() {
   let [questions, setQuestions] = useState([]);
@@ -47,39 +53,72 @@ function App() {
     });
   };
 
+  function showNavigation() {
+    if (Auth.loggedIn()) {
+      return (
+          <div>
+            <AppContext.Provider
+                value={{
+                  state: {
+                    questionAnswer,
+                    questions,
+                    answers,
+                  },
+                  function: {
+                    handleChangeInput: handleChangeInput,
+                    nextQuestion: nextQuestion,
+                  },
+                }}
+            >
+              <div className="App">
+                {
+                  (
+                      <Box sx={{ flexGrow: 1 }}>
+                        <AppBar position="static">
+                          <Toolbar>
+                            <Typography variant="h4" component="div" textAlign="center"  sx={{ flexGrow: 1 }}>
+                              Resume Builder
+                            </Typography>
+                            <Button href="/" onClick={() => Auth.logout()} color="inherit">Logout</Button>
+                          </Toolbar>
+                        </AppBar>
+                      </Box>
+                  )
+                }
+                <Questions />
+              </div>
+            </AppContext.Provider>
+
+          </div>
+      );
+    } else {
+      return (
+          <Container>
+            <Grid columns={2} divided >
+              <Grid.Row>
+                <Grid.Column>
+                  <h1>Login</h1>
+                  <LogIn/>
+                </Grid.Column>
+                <Grid.Column>
+                  <h1 >Register</h1>
+                  <Register/>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Container>
+      );
+    }
+  }
+
   return (
-    <AppContext.Provider
-      value={{
-        state: {
-          questionAnswer,
-          questions,
-          answers,
-        },
-        function: {
-          handleChangeInput: handleChangeInput,
-          nextQuestion: nextQuestion,
-        },
-      }}
-    >
-      <div className="App">
-    {
-  (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h4" component="div" textAlign="center"  sx={{ flexGrow: 1 }}>
-            Resume Builder
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
-  )
-}
-        <Questions />
-      </div>
-    </AppContext.Provider>
+      <header className="flex-row px-1">
+        <nav>
+          {showNavigation()}
+        </nav>
+      </header>
   );
+
 }
 
 export default App;
