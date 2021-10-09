@@ -56,10 +56,17 @@ function Resume() {
   let { answers } = value.state;
   return (
     <div>
-      <div ref={ref} className={classes.resume}>
+      <div 
+      ref={ref} 
+      className={classes.resume}
+      >
         {answers.map((answer) => {
           return (
-            <div>
+            <div
+            style={{
+              textAlign: "left",
+            }}
+            >
               {answer.resumeFieldId === "name" ||
               answer.resumeFieldId === "email" ||
               answer.resumeFieldId === "address" ||
@@ -90,7 +97,7 @@ function Resume() {
         <button className={classes.buttonBuildNew} onClick={refreshPage}>
           Build New
         </button>
-        <Pdf targetRef={ref} filename="code-example.pdf">
+        <Pdf targetRef={ref} filename="resume.pdf">
           {({ toPdf }) => (
             <button onClick={toPdf} className={classes.buttonDownload}>
               Download Resume
