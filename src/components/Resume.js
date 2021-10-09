@@ -55,11 +55,23 @@ function Resume() {
 
   let { answers } = value.state;
   return (
+ jackTest
+    <div>
+      <div 
+      ref={ref} 
+      className={classes.resume}
+      >
+
     <div style={{width: "8.5in", height: "11in"}}>
       <div ref={ref} className={classes.resume}  >
+ master
         {answers.map((answer) => {
           return (
-            <div>
+            <div
+            style={{
+              textAlign: "left",
+            }}
+            >
               {answer.resumeFieldId === "name" ||
               answer.resumeFieldId === "email" ||
               answer.resumeFieldId === "address" ||
