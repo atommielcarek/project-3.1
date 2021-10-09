@@ -55,8 +55,8 @@ function Resume() {
 
   let { answers } = value.state;
   return (
-    <div>
-      <div ref={ref} className={classes.resume}>
+    <div style={{width: "8.5in", height: "11in"}}>
+      <div ref={ref} className={classes.resume}  >
         {answers.map((answer) => {
           return (
             <div>
@@ -90,7 +90,7 @@ function Resume() {
         <button className={classes.buttonBuildNew} onClick={refreshPage}>
           Build New
         </button>
-        <Pdf targetRef={ref} filename="code-example.pdf">
+        <Pdf targetRef={ref} filename="resume.pdf">
           {({ toPdf }) => (
             <button onClick={toPdf} className={classes.buttonDownload}>
               Download Resume
