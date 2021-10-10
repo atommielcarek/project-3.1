@@ -15,7 +15,7 @@ router.put('api/resume/:id', async (req, res) => {
     try {
         const editResume = await Resume.findByIdAndUpdate(req.params.id, {
             $push: {
-                resume: req.body
+                info: req.body,
             }
         },
             {
@@ -27,3 +27,20 @@ router.put('api/resume/:id', async (req, res) => {
         res.status(500).json(e);
     }
 });
+
+router.get('api/resume', async (req, res) => {
+    try {
+        const updateResume = await Resume.aggregate([
+            {
+                $addFields: {
+                    totalDuration: {$sum: "$info.duration"}
+                }
+            }
+        ]);
+        res.status(200).json(updateResume);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+module.exports = router; 
