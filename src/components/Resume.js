@@ -54,7 +54,7 @@ let refreshPage = () => {
   window.location.reload();
 };
 
-function Resume()
+function Resume() {
   const ref = createRef();
   const value = useContext(AppContext);
   const classes = useStyles();
