@@ -42,29 +42,34 @@ const useStyles = makeStyles((theme) => ({
     margin: "1rem",
     marginTop: "3rem",
   },
+
+  // head: {
+  //   color: 'red',
+  // }
+
+
 }));
 
 let refreshPage = () => {
   window.location.reload();
 };
 
-function Resume() {
+function Resume()
   const ref = createRef();
   const value = useContext(AppContext);
   const classes = useStyles();
 
   let { answers } = value.state;
   return (
- jackTest
     <div>
-      <div 
-      ref={ref} 
-      className={classes.resume}
-      >
 
     <div style={{width: "8.5in", height: "11in"}}>
+      <div ref={ref} className={classes.resume}>
+
       <div ref={ref} className={classes.resume}  >
- master
+
+        {/*{console.log(answers[0].answer)}*/}
+
         {answers.map((answer) => {
           return (
             <div
@@ -72,6 +77,10 @@ function Resume() {
               textAlign: "left",
             }}
             >
+        {/*<h1 className={classes.head}>*/}
+        {/*{console.log(answers[1])}*/}
+        {/*  {answers[0].answer}*/}
+        {/*</h1>*/}
               {answer.resumeFieldId === "name" ||
               answer.resumeFieldId === "email" ||
               answer.resumeFieldId === "address" ||
@@ -93,6 +102,7 @@ function Resume() {
           );
         })}
       </div>
+      </div>
       <div
         style={{
           display: "flex",
@@ -109,6 +119,7 @@ function Resume() {
             </button>
           )}
         </Pdf>
+      </div>
       </div>
     </div>
   );
