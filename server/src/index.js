@@ -1,23 +1,26 @@
-const { ApolloServer } = require('apollo-server');
-const typeDefs = require('./schema');
-const { createStore } = require('./utils');
+const { ApolloServer } = require('apollo-server-micro')
+const cors = require('micro-cors')()
+const typeDefs = require('./schema')
+let resolvers = require('./resolvers')
+const context = require('./context')
+const directives = require('./directives')
 
+// Initialize Apollo server
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: context,
+  introspection: true,
+  playground: true,
+  schemaDirectives: directives
+})
 
-const UserAPI = require('./api/user');
-
-const store = createStore();
-
-const server = new ApolloServer({ 
-    typeDefs,
-    dataSources: () => ({
-        UserAPI: new UserAPI({store})
-    })
-});
-
-server.listen().then(() => {
-  console.log(`
-    Server is running!
-    Listening on port 4000
-    Explore at https://studio.apollographql.com/sandbox
-  `);
-});
+// Export server as handler
+module.exports = cors((req, res) => {
+  // Workaround abort on Options method
+  if (req.method === 'OPTIONS') {
+    res.end()
+    return
+  }
+  return server.createHandler({ path: '/api' })(req, res)
+})

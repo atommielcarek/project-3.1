@@ -1,26 +1,45 @@
-const { gql } = require('apollo-server');
+const { gql } = require('apollo-server-micro')
 
+// GraphQL schema
 const typeDefs = gql`
-  
-  type Query {
-  User(id: ID!): User
-  Users: [User]
-  }
 
-  type User {
-  id: ID!
-  username: String!
+directive @isAuthenticated on FIELD_DEFINITION
+
+scalar Date
+
+type User {
+  id: String!
   email: String!
   password: String!
+  firstname: String!
+  lastname: String!
+
+  created: Date
+  created_by: String!
+  updated: Date
+  updated_by: String!
 }
-  type Token {
-      jwt: ID!
-  }
 
-  type Mutation {
-  signup(email: String!, username: String!, password: String!): String!,
-  login(email: String, username: String, password: String!): Token!
-  }
-`;
+type Token {
+  token: String!
+}
 
-module.exports = typeDefs;
+type Response {
+  success: Boolean!
+  message: String
+}
+
+type Query {
+  currentUser: User @isAuthenticated
+  users: [User] @isAuthenticated
+  loginUser(email: String!, password: String!): Token
+}
+
+type Mutation {
+  createUser(email: String!, password: String!, firstname: String!, lastname: String!): User
+  updateUser(id: String!, email: String, password: String, firstname: String, lastname: String): Response
+  deleteUser(id: String!): Response
+}
+`
+
+module.exports = typeDefs
