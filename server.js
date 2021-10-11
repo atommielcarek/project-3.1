@@ -7,7 +7,7 @@ const api2 = require('./routes/homeRoutes');
 const PORT = process.env.PORT || 3001;
 
 const { graphql, buildSchema } = require('graphql');
-const schema = resumeSchema(`
+const schema = buildSchema(`
     type Query {
     }`);
 graphql(schema).then((response) => {
