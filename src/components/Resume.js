@@ -93,7 +93,11 @@ function Resume() {
                   <label>{answer.answer}</label>
                 </div>
               ) : (
-                <div>
+                <div
+                style={{
+                  margin: "15px",
+                  fontSize: "12px"
+                }}>
                   <h4>{answer.resumeField}</h4>
                   <p>{answer.answer}</p>
                 </div>
