@@ -2,13 +2,7 @@ import React, { createRef, useContext } from "react";
 import Pdf from "react-to-pdf";
 import AppContext from "../AppContext";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +36,12 @@ const useStyles = makeStyles((theme) => ({
     margin: "1rem",
     marginTop: "3rem",
   },
+
+  // head: {
+  //   color: 'red',
+  // }
+
+
 }));
 
 let refreshPage = () => {
@@ -55,16 +55,15 @@ function Resume() {
 
   let { answers } = value.state;
   return (
- jackTest
     <div>
-      <div 
-      ref={ref} 
-      className={classes.resume}
-      >
 
     <div style={{width: "8.5in", height: "11in"}}>
+      <div ref={ref} className={classes.resume}>
+
       <div ref={ref} className={classes.resume}  >
- master
+
+        {/*{console.log(answers[0].answer)}*/}
+
         {answers.map((answer) => {
           return (
             <div
@@ -72,6 +71,10 @@ function Resume() {
               textAlign: "left",
             }}
             >
+        {/*<h1 className={classes.head}>*/}
+        {/*{console.log(answers[1])}*/}
+        {/*  {answers[0].answer}*/}
+        {/*</h1>*/}
               {answer.resumeFieldId === "name" ||
               answer.resumeFieldId === "email" ||
               answer.resumeFieldId === "address" ||
@@ -84,7 +87,11 @@ function Resume() {
                   <label>{answer.answer}</label>
                 </div>
               ) : (
-                <div>
+                <div
+                style={{
+                  margin: "15px",
+                  fontSize: "12px"
+                }}>
                   <h4>{answer.resumeField}</h4>
                   <p>{answer.answer}</p>
                 </div>
@@ -92,6 +99,7 @@ function Resume() {
             </div>
           );
         })}
+      </div>
       </div>
       <div
         style={{
@@ -109,6 +117,7 @@ function Resume() {
             </button>
           )}
         </Pdf>
+      </div>
       </div>
     </div>
   );
