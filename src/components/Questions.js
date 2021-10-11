@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     height: "80vh",
   },
-  question: {},
 }));
 
 function LinearProgressWithLabel(props) {
@@ -54,7 +53,7 @@ function Questions() {
         ? (answers.length / questions.length) * 100
         : 0
     );
-  }, [answers]);
+  }, [answers, questions]);
 
   return (
     <div>
