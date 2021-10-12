@@ -24,10 +24,10 @@ Navigate to the live deployment at ( live link )
 Use to generate resumes to help your job search.
 
 ## Contributors
-Adam Mielcarek (https://github.com/atommielcarek)
-Isaac Aguirre (https://github.com/izaaaqk)
-Jack LeMasters (https://github.com/jacklemasters)
-Leigh Johnson (https://github.com/uglyb0nes)
+* Adam Mielcarek (https://github.com/atommielcarek)
+* Isaac Aguirre (https://github.com/izaaaqk)
+* Jack LeMasters (https://github.com/jacklemasters)
+* Leigh Johnson (https://github.com/uglyb0nes)
 
 ## Tests
 
