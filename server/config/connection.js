@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/ResumeBuilder', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Resumate', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
