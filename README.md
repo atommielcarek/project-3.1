@@ -19,21 +19,13 @@
 
 ## Description
 
-A simple web application for building a resume using blank templates and fill-in-the-blank information fields!
+Application to help build quick and customized resumes. Built using React, Express, GraphQL, Material-UI, and Mongoose, 
 
 ## Installation
 Clone the repository to your local machine, install required dependencies, and run the server. 
 
 ## Usage
 Navigate to the live deployment at ( heroku link here )
-
-## Contributors
-Adam Mielcarek (https://github.com/atommielcarek)
-Isaac Aguirre (https://github.com/izaaaqk)
-Jack LeMasters (https://github.com/jacklemasters)
-Leigh Johnson (https://github.com/uglyb0nes)
-=======
-Application to help build quick and customized resumes. Built using React, Express, GraphQL, Material-UI, and Mongoose, 
 
 ## Installation
 Clone the repository to your local machine, install required dependencies, and run the application with npm. 
