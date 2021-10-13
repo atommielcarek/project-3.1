@@ -4,7 +4,7 @@
 
 [!Screenshot]()
 
-!!! [Live On Heroku]()
+!!! [Live On Heroku](https://resumatee.herokuapp.com)
 
 ## Table of Contents:
 
@@ -22,14 +22,7 @@ Application to help build quick and customized resumes. Built using React, Expre
 Clone the repository to your local machine, install required dependencies, and run the server. 
 
 ## Usage
-Navigate to the live deployment at ( heroku link here )
-
-## Installation
-Clone the repository to your local machine, install required dependencies, and run the application with npm. 
-
-## Usage
-Navigate to the live deployment at ( live link )
-Use to generate resumes to help your job search.
+Navigate to the live deployment at (https://resumatee.herokuapp.com)
 
 ## Contributors
 Adam Mielcarek (https://github.com/atommielcarek)<br>
