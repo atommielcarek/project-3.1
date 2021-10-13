@@ -2,9 +2,11 @@
 
 [![License](https://img.shields.io/badge/License-Unlicense%20-blue.svg)](https://opensource.org/licenses/Unlicense)
 
-[!Screenshot]()
+![Screenshot]()
 
-!!! [Live On Heroku](https://resumatee.herokuapp.com)
+### [Resumate Tutorial Video](https://watch.screencastify.com/v/7UgQgVsIdCQcIcTCFPtM)
+
+### [Live On Heroku](https://resumatee.herokuapp.com)
 
 ## Table of Contents:
 
