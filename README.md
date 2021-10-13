@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Unlicense%20-blue.svg)](https://opensource.org/licenses/Unlicense)
 
-![Screenshot]()
+![Screenshot](https://github.com/atommielcarek/project-3.1/blob/master/client/public/images/resumate.png)
 
 ### [Resumate Tutorial Video](https://watch.screencastify.com/v/7UgQgVsIdCQcIcTCFPtM)
 
