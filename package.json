@@ -4,7 +4,7 @@
   "description": "[![License](https://img.shields.io/badge/License-Unlicense%20-blue.svg)](https://opensource.org/licenses/Unlicense)",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "npm run develop",
     "develop": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
